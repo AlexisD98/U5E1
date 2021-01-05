@@ -1,0 +1,39 @@
+package u5e1.burbuja;
+import java.util.ArrayList;
+import java.util.List;
+
+public class U5E1Burbuja {
+    public static void main(String[] args) {
+        List <Integer> ALista= new ArrayList <Integer>();
+        Integer [] arreglo = new Integer[ALista.size()];
+        ALista.add(9);
+        ALista.add(1);
+	ALista.add (4);
+        ALista.add(3);
+        ALista.add(10);
+	ALista.add (7);
+        ALista.add (5);//1,3,4,5,7,9,10 RESUELTO
+        arreglo =ALista.toArray(arreglo);
+        
+        System.out.println("Lista desordenada");
+        for(int i=0;i<=ALista.size()-1;i++){
+            System.out.print(ALista.get(i)+",");
+            //System.out.println("");
+        }
+        for(int i=0; i<arreglo.length-1;i++){
+            for(int j=0; j<arreglo.length-1;j++){
+                if(arreglo[j]>arreglo[j+1]){
+                    int auxiliar= arreglo [j+1];
+                    arreglo[j+1]=arreglo[j];
+                    arreglo[j]=auxiliar;
+                }
+            }
+        }
+        System.out.println("");
+        System.out.println("Lista Ordenada");
+        for(int i=0; i<arreglo.length; i++){
+            System.out.print(arreglo[i] +",");
+        }
+
+    }
+}
